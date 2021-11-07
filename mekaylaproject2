@@ -1,0 +1,82 @@
+package com.company;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.event.MouseListener;
+
+public class MyGUI extends javax.swing.JFrame implements ActionListener {
+
+
+    JButton sub = new JButton("Submit");
+    JButton req = new JButton("Request Annual Payment Information");
+    JLabel lastName = new JLabel("Enter last name");
+    JLabel firstName = new JLabel("Enter first name ");
+    JLabel address = new JLabel("Enter Address");
+    JLabel ss = new JLabel("Enter Social Security Number");
+    JLabel occupation = new JLabel("Input Occupation");
+    JTextField textt = new JTextField();
+    JTextField textt2 = new JTextField();
+    JTextField textt3 = new JTextField();
+    JTextField textt4 = new JTextField();
+    JTextField textt5 = new JTextField();
+
+    JLabel answer = new JLabel();
+    JLabel request = new JLabel();
+
+
+    public MyGUI() {
+        setSize(1000, 500);
+
+
+        Container box = getContentPane();
+
+        BoxLayout enters = new BoxLayout(box, BoxLayout.Y_AXIS);
+
+
+        setLayout(enters);
+
+
+        box.add(lastName);
+        box.add(textt);
+        box.add(firstName);
+        box.add(textt2);
+        box.add(address);
+        box.add(textt3);
+        box.add(ss);
+        box.add(textt4);
+
+        box.add(occupation);
+        box.add(textt5);
+        box.add(sub);
+        box.add(answer);
+        box.add(req);
+        box.add(request);
+
+        textt.addActionListener(this);
+        textt2.addActionListener(this);
+        sub.addActionListener(this);
+       req.addActionListener(this);
+        req.addMouseListener((MouseListener) this);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        setVisible(true);
+
+    }
+
+    public void actionPerformed(java.awt.event.ActionEvent thing) {
+
+
+
+        answer.setText("Is a : " + " You made this many hours\n");
+    setVisible(true);
+
+        request.setText("Additional Info");
+
+
+    // this.req = req;
+}
+    public static void main(String[]unused){
+        MyGUI spot = new MyGUI();
+    }
+}
