@@ -10,6 +10,7 @@ public double bonus(int productsSold) {
             double onePercentSalary = super.annualPay * 0.01;
             super.annualPay = 500 + onePercentSalary;
         }
+
     return annualPay;
     }
 }
